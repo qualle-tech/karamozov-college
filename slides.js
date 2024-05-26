@@ -8,11 +8,7 @@ window.addEventListener("load", function () {
   showSlides(slideIndex);
   myTimer = setInterval(function () {
     plusSlides(1);
-  }, 4000);
-
-  slideshowContainer = document.getElementsByClassName(
-    "slideshow-container"
-  )[0];
+  }, 3000);
 
   slideshowContainer.addEventListener("mouseenter", pause);
   slideshowContainer.addEventListener("mouseleave", resume);
@@ -25,20 +21,30 @@ function plusSlides(n) {
   } else {
     showSlides((slideIndex += 1));
   }
+
+  if (n === -1) {
+    myTimer = setInterval(function () {
+      plusSlides(n + 2);
+    }, 3000);
+  } else {
+    myTimer = setInterval(function () {
+      plusSlides(n + 1);
+    }, 3000);
+  }
 }
 
 function currentSlide(n) {
   clearInterval(myTimer);
   myTimer = setInterval(function () {
     plusSlides(n + 1);
-  }, 4000);
+  }, 3000);
   showSlides((slideIndex = n));
 }
 
 function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
+  let i;
+  const slides = document.getElementsByClassName("mySlides");
+  const dots = document.getElementsByClassName("dot");
   if (n > slides.length) {
     slideIndex = 1;
   }
@@ -63,5 +69,5 @@ resume = () => {
   clearInterval(myTimer);
   myTimer = setInterval(function () {
     plusSlides(slideIndex);
-  }, 4000);
+  }, 3000);
 };
