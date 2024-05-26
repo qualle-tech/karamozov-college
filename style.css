@@ -26,6 +26,8 @@ footer {
 a {
   color: #000b76;
   cursor: pointer;
+  text-wrap: none;
+  white-space: nowrap;
 }
 
 h1 {
