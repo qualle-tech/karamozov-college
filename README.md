@@ -22,11 +22,14 @@ The website is live on GitHub Pages. You can [view it here](https://qualle-tech.
 - JavaScript (ES6+)
 
 ## Contributing
-If you'd like to contribute to this project, please follow these steps:
 
-- Fork the repository.
-- Create a new branch (git checkout -b feature/your-feature-name).
-- Make your changes.
-- Commit your changes (git commit -am 'Add new feature').
-- Push to the branch (git push origin feature/your-feature-name).
-- Create a new Pull Request.
+To contribute to this project, follow these steps:
+
+1. Fork the repository to your GitHub account.
+2. Create a new branch (`git checkout -b feature/your-feature-name`).
+3. Make your changes and ensure they follow our coding standards.
+4. Test your changes locally.
+5. Commit your changes (`git commit -am 'Add new feature'`).
+6. Push to your forked repository (`git push origin feature/your-feature-name`).
+7. Open a new Pull Request against the `main` branch of this repository.
+8. Await review and approval from our team.
