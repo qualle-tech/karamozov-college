@@ -205,6 +205,13 @@ li {
     display: block !important;
     padding: 1rem 0;
   }
+
+  .complete-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 36rem;
+    align-items: center;
+  }
 }
 
 .buttons {
