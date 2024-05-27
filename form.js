@@ -4,16 +4,17 @@ const cancelButton = document.querySelector("#cancel-button");
 const requiredFields = form.querySelectorAll(
   "input[required], textarea[required]"
 );
-const allFields = form.querySelectorAll("input", "textarea");
+const allFields = form.querySelectorAll("input, textarea");
 const storageKey = "karamozov-app-data";
 
 function checkRequiredFields() {
+  console.log(Array.from(requiredFields));
   let allFilled = Array.from(requiredFields).every((field) => {
     if (field.type === "email") {
       return validateEmail(field.value);
     } else if (field.type === "file") {
       return field.files.length > 0;
-    } else if (field.tagName.toLowerCase() === "textarea") {
+    } else if (field.type === "textarea") {
       return field.value.trim().length >= 5000;
     } else {
       return field.value.trim() !== "";
@@ -61,7 +62,8 @@ function clearFormData() {
 }
 
 allFields.forEach((field) => {
-  field.addEventListener("input", () => {
+  field.addEventListener("keyup", () => {
+    console.log("yes");
     checkRequiredFields();
     saveFormData();
   });
