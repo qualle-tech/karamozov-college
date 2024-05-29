@@ -13,7 +13,7 @@ Pages are optimized for mobile, the application page and the success page are al
 
 ## Live Demo
 
-The website is live on GitHub Pages. You can [view it here](https://qualle-tech.github.io/karamozov-college/).
+The website is live on GitHub Pages. You can [view it here](https://qualletech.github.io/karamozov-college/).
 
 ## Technologies Used
 
