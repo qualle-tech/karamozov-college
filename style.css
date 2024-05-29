@@ -235,10 +235,27 @@ li {
 
 .buttons {
   display: grid;
+  gap: 1rem;
+}
+
+.submit {
+  background-color: #da443f;
+  color: white;
+  display: grid;
   grid-auto-flow: column;
   align-items: center;
-  justify-content: start;
-  gap: 1rem;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+  padding: 0.5rem 0.8rem;
+  border: 1px solid white;
+  border-radius: 1rem;
+  box-shadow: 0 8px 16px 0 #da443f2a, 0 6px 20px 0 #da443f2a;
+  text-decoration: none;
+}
+
+#cancel-button {
+  color: #373f47;
+  text-align: center;
 }
 
 form {

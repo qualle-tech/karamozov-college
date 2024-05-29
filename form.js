@@ -8,7 +8,6 @@ const allFields = form.querySelectorAll("input, textarea");
 const storageKey = "karamozov-app-data";
 
 function checkRequiredFields() {
-  console.log(Array.from(requiredFields));
   let allFilled = Array.from(requiredFields).every((field) => {
     if (field.type === "email") {
       return validateEmail(field.value);
@@ -63,7 +62,6 @@ function clearFormData() {
 
 allFields.forEach((field) => {
   field.addEventListener("keyup", () => {
-    console.log("yes");
     checkRequiredFields();
     saveFormData();
   });
