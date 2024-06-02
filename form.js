@@ -9,10 +9,9 @@ function checkRequiredFields() {
     if (field.type === "textarea") {
       return field.value.trim().length >= 1;
   });
-  if (textAreaFilled) {
-    submitButton.classList.remove("deactivated");
+  if (textAreaFilled) { submitButton.classList.remove("deactivated");
   } else {
-    submitButton.classList.add("deactivated");
+ submitButton.classList.add("deactivated");
   }
 }
 
@@ -46,11 +45,7 @@ function clearFormData() {
 }
 
 allFields.forEach((field) => {
-  field.addEventListener("keyup", () => {
-    checkRequiredFields();
-    saveFormData();
-  });
-  field.addEventListener("change", () => {
+  field.addEventListener("input", () => {
     checkRequiredFields();
     saveFormData();
   });
