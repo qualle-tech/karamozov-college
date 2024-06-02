@@ -1,34 +1,19 @@
 const form = document.querySelector("#application-form");
 const submitButton = document.querySelector("#submit");
 const cancelButton = document.querySelector("#cancel-button");
-const requiredFields = form.querySelectorAll(
-  "input[required], textarea[required]"
-);
 const allFields = form.querySelectorAll("input, textarea");
 const storageKey = "karamozov-app-data";
 
 function checkRequiredFields() {
-  let allFilled = Array.from(requiredFields).every((field) => {
-    if (field.type === "email") {
-      return validateEmail(field.value);
-    } else if (field.type === "file") {
-      return field.files.length > 0;
-    } else if (field.type === "textarea") {
-      return field.value.trim().length >= 5000;
-    } else {
-      return field.value.trim() !== "";
-    }
+  let textAreaFilled = Array.from(allFields).every((field) => {
+    if (field.type === "textarea") {
+      return field.value.trim().length >= 50;
   });
-  if (allFilled) {
+  if (textAreaFilled) {
     submitButton.classList.remove("deactivated");
   } else {
     submitButton.classList.add("deactivated");
   }
-}
-
-function validateEmail(email) {
-  const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-  return re.test(email);
 }
 
 function saveFormData() {
