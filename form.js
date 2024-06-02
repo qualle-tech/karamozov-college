@@ -7,7 +7,7 @@ const storageKey = "karamozov-app-data";
 function checkRequiredFields() {
   let textAreaFilled = Array.from(allFields).every((field) => {
     if (field.type === "textarea") {
-      return field.value.trim().length >= 50;
+      return field.value.trim().length >= 1;
   });
   if (textAreaFilled) {
     submitButton.classList.remove("deactivated");
