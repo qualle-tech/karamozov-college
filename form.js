@@ -5,12 +5,18 @@ const allFields = form.querySelectorAll("input, textarea");
 const storageKey = "karamozov-app-data";
 
 function checkRequiredFields() {
-  let textAreaFilled = Array.from(allFields).every((field) => {
-    if (field.type === "textarea") {
+  let textAreaFilled = Array.from(allFields).some((field) => {
+    if (field.tagName.toLowerCase() === "textarea") {
       return field.value.length >= 1;
+    }
+    return false;
   });
-  if (textAreaFilled) { submitButton.classList.remove("deactivated");
-  } 
+
+  if (textAreaFilled) {
+    submitButton.classList.remove("deactivated");
+  } else {
+    submitButton.classList.add("deactivated");
+  }
 }
 
 function saveFormData() {
